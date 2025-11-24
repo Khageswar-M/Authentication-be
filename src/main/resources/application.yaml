@@ -29,3 +29,9 @@ spring:
 
 server:
   port: ${SERVER_PORT:8080}  # default 8080 if not set
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
