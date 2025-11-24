@@ -80,6 +80,10 @@ public class CustomOAuthSuccessHandler implements AuthenticationSuccessHandler {
 
         System.out.println("✔ User saved to DB: " + savedUser.getEmail());
 
+        // Allow cross-origin cookies
+        response.setHeader("Access-Control-Allow-Origin", "https://authentication-fe-sigma.vercel.app");
+        response.setHeader("Access-Control-Allow-Credentials", "true");
+
         // Redirect to frontend
         response.sendRedirect("https://authentication-fe-sigma.vercel.app/logged-users");
     }
