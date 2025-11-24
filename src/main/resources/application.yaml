@@ -29,6 +29,11 @@ spring:
 
 server:
   port: ${SERVER_PORT:8080}  # default 8080 if not set
+  servlet:
+    session:
+      cookie:
+        same-site: none
+        secure: true
 
 management:
   endpoints:
